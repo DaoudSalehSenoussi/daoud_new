@@ -12,19 +12,20 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/kayit', 'HomeController@createView')->name('register.view');
 
-//%2 bu şekilde çalışacağız
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'LoginController@loginView');
+Route::post('/giris','LoginController@login')->name('login');
 
 Route::get('/admin', 'AdminController@index');
 
 //%98 bu tarz yapacağız
 Route::get('/merhaba', 'HomeController@merhaba');
-Route::get('/kisiler','HomeController@indexView');
-Route::get('/kayit', 'HomeController@createView');
+Route::get('/kisiler', 'HomeController@indexView')->name('person');
 Route::post('/kaydet', 'HomeController@create');
-Route::get('/sil/{id}','HomeController@delete')->where(array('id' => '[0-9]+'));
-Route::post('/guncelle/{id}','HomeController@update')->where(array('id' => '[0-9]+'));
+Route::get('/sil/{id}', 'HomeController@delete')->where(array('id' => '[0-9]+'));
+Route::post('/guncelle/{id}', 'HomeController@update')->where(array('id' => '[0-9]+'))->name('user.update');
 Route::get('/guncelle/{id}','HomeController@updateView')->where(array('id' => '[0-9]+'));
+
+Route::get('/userimport','ExcelUploadController@userImportView')->name('user.upload');
+Route::post('/userimportpost','ExcelUploadController@userImport')->name('user.import');
