@@ -29,3 +29,12 @@ Route::get('/guncelle/{id}','HomeController@updateView')->where(array('id' => '[
 
 Route::get('/userimport','ExcelUploadController@userImportView')->name('user.upload');
 Route::post('/userimportpost','ExcelUploadController@userImport')->name('user.import');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/indir','ExcelDownloadController@userDownload')->name('user.download');
+Route::get('/urun-ekle','ProductController@productCreateView')->name ('product.add');
+Route::post('/urun-kaydet', 'ProductController@productCreate')->name ('product.create');
+Route::get('/urun-liste','ProductController@indexView');

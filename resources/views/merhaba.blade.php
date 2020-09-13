@@ -8,21 +8,15 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>Laravel Ders</title>
+    <title>Hello, world!</title>
 </head>
 <body>
-<h1 class="alert alert-danger text-center">Hello, world!</h1>
-<p class="alert alert-success text-center">Merhaba burda view çalıştı! </p>
+<h1>Hello, world!</h1>
+Merhaba burda view çalıştı! <br>
 
-@foreach($products as $product)  
-          <div class="alert alert-primary text-center" role="alert">
-{{ $product->new }} - {{$product->name}}
-
-  
-</div>    
-@endforeach
-
-            
+@foreach($products as $product)
+   <img src="{{asset('/uploads/products/').'/'.$product->photo}}" alt="{{$product->name}}" width="200px" height="200px"/> {{$product->user[0]->name }} - {{$product -> name }} - {{$product -> price .'$'}} <br>
+   @endforeach
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
