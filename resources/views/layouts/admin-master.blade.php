@@ -125,12 +125,14 @@
                         </a>
                         <ul class="list-unstyled navbar__sub-list js-sub-list">
                             <li>
-                                <a href="login.html">
-                                    <i class="fas fa-sign-in-alt"></i>Login</a>
+                                <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
-                            <li>
-                                <a href="register.html">
-                                    <i class="fas fa-user"></i>Register</a>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
                             </li>
                             <li>
                                 <a href="forget-pass.html">
@@ -267,8 +269,25 @@
                             <div class="setting-menu js-right-sidebar d-none d-lg-block">
                                 <div class="account-dropdown__body">
                                     <div class="account-dropdown__item">
-                                        <a href="#">
-                                            <i class="zmdi zmdi-account"></i>Account</a>
+                                       
+                        <a class="js-arrow" href="#">
+                            <i class="zmdi zmdi-account"></i>Account</a>
+                            
+                        </a>
+                        <ul class="list-unstyled navbar__sub-list js-sub-list">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        </ul>
+                    </li>
+                                    
+                                                
+                                            
                                     </div>
                                     <div class="account-dropdown__item">
                                         <a href="#">
