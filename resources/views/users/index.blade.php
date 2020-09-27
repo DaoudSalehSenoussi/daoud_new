@@ -14,8 +14,6 @@
                                                 <th>Email</th>
                                                 <th>Delete</th>
                                                 <th>Update</th>
-                                                <th colspan="3" class="text-right"><a href="/admin"><li class="btn btn-primary"><i class="fa fa-undo">Return</i>
-</li></a></th>
                                             
                                             </tr>
                                         

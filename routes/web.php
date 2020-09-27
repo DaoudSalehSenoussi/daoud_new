@@ -21,7 +21,7 @@ Route::get('/admin', 'AdminController@index');
 
 //%98 bu tarz yapacağız
 Route::get('/merhaba', 'HomeController@merhaba');
-Route::get('/kisiler', 'HomeController@indexView')->name('person');
+Route::get('/People', 'HomeController@indexView')->name('person');
 Route::post('/kaydet', 'HomeController@create');
 Route::get('/sil/{id}', 'HomeController@delete')->where(array('id' => '[0-9]+'));
 Route::post('/guncelle/{id}', 'HomeController@update')->where(array('id' => '[0-9]+'))->name('user.update');
@@ -38,3 +38,6 @@ Route::get('/indir','ExcelDownloadController@userDownload')->name('user.download
 Route::get('/urun-ekle','ProductController@productCreateView')->name ('product.add');
 Route::post('/urun-kaydet', 'ProductController@productCreate')->name ('product.create');
 Route::get('/urun-liste','ProductController@indexView');
+Route::get('/application', 'HomeController@applicationView')->name('application');
+Route::get('/userexport','ExcelDownloadController@userExportView');
+Route::post('/userexportpost','ExcelDownloadController@userExport');

@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="card">
                         <div class="card-header">
-                            <strong>User add form </strong> Formu
+                            <strong>User add form </strong>
                         </div>
                         <div class="card-body card-block">
                             <form action="{{route('user.import')}}" method="post" enctype="multipart/form-data">

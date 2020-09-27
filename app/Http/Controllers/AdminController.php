@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use app/User
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -10,4 +10,13 @@ class AdminController extends Controller
     {
         return view('layouts.admin-master');
     }
+
+
+    {
+    	
+    public function getUsers($lang)
+
+    	return 
+    }
+
 }

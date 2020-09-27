@@ -85,4 +85,15 @@ class HomeController extends Controller
         ]);
         return 'Başarıyla Silindi';
     }
+
+
+    public function applicationView()
+    {
+        
+
+
+        return view('application.application');
+    }
+
+    
 }
